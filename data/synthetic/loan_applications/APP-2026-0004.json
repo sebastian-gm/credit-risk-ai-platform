@@ -1,0 +1,25 @@
+{
+  "notice": "Synthetic demo record. Not real applicant data.",
+  "application_id": "APP-2026-0004",
+  "applicant_name": "Leo Martin",
+  "product": "Personal Loan",
+  "requested_amount": 27800,
+  "annual_income": 63000,
+  "credit_score": 626,
+  "dti": 0.49,
+  "employment_months": 15,
+  "state": "AZ",
+  "channel": "Digital",
+  "risk_band": "D",
+  "status": "exception_review",
+  "missing_docs": "income_verification",
+  "synthetic_pii": "yes",
+  "declared_purpose": "debt consolidation",
+  "income_source": "employment",
+  "documents_received": [
+    "application_form",
+    "identity_verification",
+    "income_verification"
+  ],
+  "analyst_queue": "exception_review"
+}

@@ -11,15 +11,13 @@ Deployment date:
 Subscription:
 
 ```text
-sub-veerda-ai-lab
-778b05a9-6f2e-4809-a4f5-d2e29cfb9094
+Lab subscription
 ```
 
 Tenant:
 
 ```text
-Default Directory
-027716bb-daa5-41c6-bbc0-f2555738a825
+Project tenant
 ```
 
 Region:
@@ -34,7 +32,6 @@ Budget:
 budget-crai-dev
 CAD 50 monthly
 Alerts: 50%, 80%, 100%
-Email: sebastian.sgm@outlook.com
 ```
 
 Created resources:
@@ -43,6 +40,7 @@ Created resources:
 Resource group: rg-crai-dev-eastus2
 Storage account: stcraidev6fecno
 Data Lake filesystems: raw, processed, curated
+Uploaded raw dataset path: raw/synthetic/
 Key Vault: kv-crai-dev-6fecno
 Log Analytics: law-crai-dev
 Application Insights: appi-crai-dev
@@ -64,4 +62,3 @@ Screenshot targets:
 - Log Analytics workspace overview;
 - Application Insights overview;
 - subscription budget page.
-

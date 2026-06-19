@@ -9,7 +9,7 @@ Why:
 - It matches your previous fintech and credit-risk experience.
 - It gives stronger AI Engineer portfolio value than a generic construction demo.
 - It naturally supports documents, structured data, risk workflows, governance, auditability, Power BI, and cited AI answers.
-- It avoids using ConeTec directly and avoids turning Veerda or SLP Nova into a messy side branch.
+- It avoids using confidential employer data or unrelated production product data.
 
 Construction was a reasonable option because of your current BI/operations background, but fintech is the better portfolio story for you.
 

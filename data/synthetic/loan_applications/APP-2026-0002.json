@@ -1,0 +1,25 @@
+{
+  "notice": "Synthetic demo record. Not real applicant data.",
+  "application_id": "APP-2026-0002",
+  "applicant_name": "Evan Brooks",
+  "product": "Small Business Loan",
+  "requested_amount": 65000,
+  "annual_income": 118000,
+  "credit_score": 681,
+  "dti": 0.42,
+  "employment_months": 22,
+  "state": "GA",
+  "channel": "Broker",
+  "risk_band": "C",
+  "status": "manual_review",
+  "missing_docs": "bank_statement_q2",
+  "synthetic_pii": "yes",
+  "declared_purpose": "working capital",
+  "income_source": "business revenue",
+  "documents_received": [
+    "application_form",
+    "identity_verification",
+    "income_verification"
+  ],
+  "analyst_queue": "manual_review"
+}

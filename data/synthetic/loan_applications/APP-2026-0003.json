@@ -1,0 +1,25 @@
+{
+  "notice": "Synthetic demo record. Not real applicant data.",
+  "application_id": "APP-2026-0003",
+  "applicant_name": "Nadia Chen",
+  "product": "Personal Loan",
+  "requested_amount": 9200,
+  "annual_income": 54000,
+  "credit_score": 742,
+  "dti": 0.24,
+  "employment_months": 61,
+  "state": "TX",
+  "channel": "Digital",
+  "risk_band": "A",
+  "status": "ready_for_decision",
+  "missing_docs": "none",
+  "synthetic_pii": "yes",
+  "declared_purpose": "debt consolidation",
+  "income_source": "employment",
+  "documents_received": [
+    "application_form",
+    "identity_verification",
+    "income_verification"
+  ],
+  "analyst_queue": "ready_for_decision"
+}

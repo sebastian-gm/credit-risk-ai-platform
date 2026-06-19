@@ -18,6 +18,7 @@ All data in this project must be fake.
 ## Example Files
 
 ```text
+data/synthetic/
 data/raw/loan_applications/
 data/raw/policies/
 data/raw/underwriting_memos/
@@ -48,4 +49,3 @@ data/raw/portfolio/
 ## Rule
 
 Never use real applicant, customer, bank, employer, credit-bureau, or company-confidential data.
-

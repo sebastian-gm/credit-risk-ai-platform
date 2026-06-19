@@ -12,7 +12,7 @@ sub-veerda-ai-lab
 
 Why:
 
-- separates this project from SLP Nova production infrastructure;
+- separates this project from production infrastructure;
 - keeps billing and cleanup simple;
 - supports future Veerda case studies and demos;
 - avoids mixing portfolio experiments with sensitive product workloads.

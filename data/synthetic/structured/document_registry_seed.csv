@@ -1,0 +1,5 @@
+document_id,file_path,document_type,department,sensitivity_label,owner
+DOC-POL-001,policies/credit_policy_2026.md,policy,Credit Risk,internal,credit_policy
+DOC-POL-002,policies/fair_lending_policy.md,policy,Compliance,internal,compliance
+DOC-POL-003,policies/document_checklist_policy.md,policy,Operations,internal,loan_ops
+DOC-RPT-001,operations/weekly_credit_ops_report.md,operations_report,Operations,internal,loan_ops

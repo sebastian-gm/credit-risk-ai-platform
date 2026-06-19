@@ -1,0 +1,25 @@
+{
+  "notice": "Synthetic demo record. Not real applicant data.",
+  "application_id": "APP-2026-0001",
+  "applicant_name": "Maya Torres",
+  "product": "Personal Loan",
+  "requested_amount": 18500,
+  "annual_income": 72000,
+  "credit_score": 704,
+  "dti": 0.31,
+  "employment_months": 48,
+  "state": "FL",
+  "channel": "Digital",
+  "risk_band": "B",
+  "status": "manual_review",
+  "missing_docs": "none",
+  "synthetic_pii": "yes",
+  "declared_purpose": "debt consolidation",
+  "income_source": "employment",
+  "documents_received": [
+    "application_form",
+    "identity_verification",
+    "income_verification"
+  ],
+  "analyst_queue": "manual_review"
+}

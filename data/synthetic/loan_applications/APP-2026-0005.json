@@ -1,0 +1,25 @@
+{
+  "notice": "Synthetic demo record. Not real applicant data.",
+  "application_id": "APP-2026-0005",
+  "applicant_name": "Sofia Alvarez",
+  "product": "Small Business Loan",
+  "requested_amount": 42000,
+  "annual_income": 96000,
+  "credit_score": 713,
+  "dti": 0.36,
+  "employment_months": 39,
+  "state": "FL",
+  "channel": "Partner",
+  "risk_band": "B",
+  "status": "manual_review",
+  "missing_docs": "business_tax_return",
+  "synthetic_pii": "yes",
+  "declared_purpose": "working capital",
+  "income_source": "business revenue",
+  "documents_received": [
+    "application_form",
+    "identity_verification",
+    "income_verification"
+  ],
+  "analyst_queue": "manual_review"
+}

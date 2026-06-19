@@ -1,0 +1,25 @@
+{
+  "notice": "Synthetic demo record. Not real applicant data.",
+  "application_id": "APP-2026-0006",
+  "applicant_name": "Owen Patel",
+  "product": "Personal Loan",
+  "requested_amount": 31500,
+  "annual_income": 85000,
+  "credit_score": 658,
+  "dti": 0.45,
+  "employment_months": 27,
+  "state": "NC",
+  "channel": "Digital",
+  "risk_band": "C",
+  "status": "fraud_review",
+  "missing_docs": "address_verification",
+  "synthetic_pii": "yes",
+  "declared_purpose": "debt consolidation",
+  "income_source": "employment",
+  "documents_received": [
+    "application_form",
+    "identity_verification",
+    "income_verification"
+  ],
+  "analyst_queue": "fraud_review"
+}

@@ -34,6 +34,9 @@ data/curated/*
 !data/processed/.gitkeep
 !data/curated/.gitkeep
 
+# Terraform runtime artifacts
+infra/terraform/**/.terraform/
+
 # OS
 .DS_Store
 Thumbs.db

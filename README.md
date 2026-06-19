@@ -41,6 +41,7 @@ The platform supports:
 ├── data/                  # synthetic raw/processed/curated data placeholders
 ├── docs/                  # architecture, data, governance, and Azure notes
 ├── infra/terraform/       # Azure infrastructure as code
+├── scripts/               # local generation and upload helpers
 ├── src/                   # Python ingestion, extraction, RAG, and evaluation code
 └── PROJECT_PLAN.md
 ```
@@ -65,3 +66,20 @@ Build the Azure foundation:
 - Terraform environment structure
 
 Then add synthetic data and ingestion.
+
+## Synthetic Data
+
+The project includes generated synthetic lending data under `data/synthetic`.
+It is safe for public portfolio use and does not contain real applicant data.
+
+Generate or refresh it with:
+
+```bash
+python3 scripts/generate_synthetic_data.py
+```
+
+Upload it to the raw Data Lake filesystem with:
+
+```bash
+python3 scripts/upload_synthetic_data.py
+```
