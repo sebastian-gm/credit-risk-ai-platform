@@ -14,6 +14,8 @@ venv/
 *.tfstate.*
 *.tfvars
 !.tfvars.example
+tfplan
+*.tfplan
 crash.log
 override.tf
 override.tf.json
@@ -35,4 +37,3 @@ data/curated/*
 # OS
 .DS_Store
 Thumbs.db
-

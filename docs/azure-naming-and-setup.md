@@ -30,14 +30,14 @@ sub-veerda-labs
 Start with one development resource group:
 
 ```text
-rg-crai-dev-canadacentral
+rg-crai-dev-eastus2
 ```
 
 Future environments:
 
 ```text
-rg-crai-stg-canadacentral
-rg-crai-prod-canadacentral
+rg-crai-stg-eastus2
+rg-crai-prod-eastus2
 ```
 
 For now, only create `dev`.
@@ -58,19 +58,19 @@ credit risk AI
 
 ## Initial Region
 
-Recommended:
+Recommended for the demo:
 
 ```text
-Canada Central
+East US 2
 ```
 
 Reason:
 
-- close to your current operating context;
-- already familiar from other Azure work;
-- good default for learning and portfolio work.
+- broad Azure service availability;
+- common region for demos and learning workloads;
+- lower-cost default than many smaller regions for common services.
 
-If Azure OpenAI / AI Foundry model capacity is unavailable, use a supported alternate region for AI services while keeping the core data resources in Canada Central.
+If Azure OpenAI / AI Foundry model capacity is unavailable, use a supported alternate region for AI services while keeping the core demo resources in East US 2.
 
 ## Initial Azure Resources
 
@@ -112,7 +112,7 @@ Create a monthly Azure budget before deploying AI services.
 Recommended starting budget:
 
 ```text
-CAD 50-100/month
+CAD 50/month
 ```
 
 Use alerts at:
@@ -131,7 +131,6 @@ Confirm:
 - Tenant ID
 - Subscription ID
 - Subscription name
-- Region
-- Monthly budget limit
+- Region: East US 2
+- Monthly budget limit: CAD 50
 - Whether GitHub Actions OIDC should be configured now or later
-

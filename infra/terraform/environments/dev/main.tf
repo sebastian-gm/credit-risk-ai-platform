@@ -10,13 +10,14 @@ resource "random_string" "suffix" {
 
 locals {
   name_prefix = "${var.project}-${var.environment}"
+  region_code = replace(var.location, " ", "")
   common_tags = merge(var.tags, {
     managed_by = "terraform"
   })
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "rg-${local.name_prefix}"
+  name     = "rg-${local.name_prefix}-${local.region_code}"
   location = var.location
   tags     = local.common_tags
 }
@@ -74,7 +75,6 @@ resource "azurerm_key_vault" "main" {
   sku_name                   = "standard"
   soft_delete_retention_days = 7
   purge_protection_enabled   = false
-  enable_rbac_authorization  = true
+  rbac_authorization_enabled = true
   tags                       = local.common_tags
 }
-

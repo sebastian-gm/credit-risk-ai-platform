@@ -8,7 +8,7 @@ Best option:
 
 ```text
 Subscription: sub-veerda-ai-lab
-Resource group: rg-crai-dev-canadacentral
+Resource group: rg-crai-dev-eastus2
 ```
 
 ## Do Not Use
@@ -42,7 +42,7 @@ Start with a new lab subscription under your personal control:
 ```text
 Account: sebastian.sgm@outlook.com
 Subscription: sub-veerda-ai-lab
-Resource group: rg-crai-dev-canadacentral
+Resource group: rg-crai-dev-eastus2
 ```
 
 This keeps SLP Nova isolated while still letting the project support Veerda's future consulting/studio positioning.
