@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!.tfvars.example
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Azure / local tooling
+.azure/
+.vscode/
+
+# Data outputs
+data/raw/*
+data/processed/*
+data/curated/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/curated/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
