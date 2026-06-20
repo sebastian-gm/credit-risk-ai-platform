@@ -1,0 +1,5 @@
+prompt_id,use_case_id,prompt_name,version,owner,risk_level,prompt_purpose,allowed_data,required_controls,status
+PR-001,UC-001,Credit Policy Assistant System Prompt,1.0,Credit Risk Enablement,Medium,Answer policy questions using only retrieved context,Synthetic policies and memos,Citations and insufficient-context refusal,Active
+PR-002,UC-002,Loan File Summary System Prompt,1.0,Credit Risk Enablement,High,Summarize synthetic loan files for analyst review,Synthetic loan applications and memos,Human review and no approval language,Draft
+PR-003,UC-004,Invoice Extraction Review Prompt,1.0,Finance Operations,Medium,Explain extracted invoice fields for AP validation,Synthetic invoice extraction output,Reviewer validation and no payment authorization,Draft
+PR-004,UC-005,Executive Portfolio Summary Prompt,1.0,Analytics,Low,Summarize aggregate credit-risk metrics,Curated aggregate metrics,Aggregate-only reporting,Draft

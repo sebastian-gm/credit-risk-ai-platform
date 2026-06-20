@@ -61,6 +61,7 @@ Current scope:
 
 - low-cost Azure foundation;
 - serverless Azure SQL metadata/analytics layer;
+- AI governance registry and audit tables;
 - Azure AI Search hybrid vector retrieval layer;
 - Azure OpenAI grounded assistant layer;
 - RAG evaluation harness;
@@ -75,6 +76,10 @@ ifrs9_credit_risk: 29,465 rows
 ifrs9_default_rate_by_grade: 7 rows
 ifrs9_default_rate_by_intent: 6 rows
 ifrs9_default_rate_by_home_ownership: 4 rows
+ai_use_case_registry: 6 rows
+ai_tool_review_checklist: 6 rows
+ai_prompt_library: 4 rows
+ai_audit_log: 4 rows
 ```
 
 Azure AI Search loaded index:

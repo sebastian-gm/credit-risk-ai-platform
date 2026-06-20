@@ -1,0 +1,7 @@
+check_id,use_case_id,review_area,review_question,status,evidence,reviewed_by,reviewed_at
+CHK-001,UC-001,Grounding,Does the assistant return source citations?,Passed,Hybrid Search returns source paths and assistant prints citations,AI Governance,2026-06-20
+CHK-002,UC-001,Evaluation,Is there an evaluation set before demo release?,Passed,RAG evaluation harness includes policy and prohibited-use cases,AI Governance,2026-06-20
+CHK-003,UC-002,Human Review,Can the tool make a final lending decision?,Passed,Prompt and policy state final decisions require human analyst review,AI Governance,2026-06-20
+CHK-004,UC-003,Workflow,Does the workflow route exceptions instead of deciding outcomes?,Passed,Missing documents route to Operations before analyst review,AI Governance,2026-06-20
+CHK-005,UC-004,Validation,Are extracted invoice totals reviewed by a person?,Passed,Finance reviewer validates generated extraction summary,AI Governance,2026-06-20
+CHK-006,UC-006,Acceptable Use,Is automated loan approval allowed?,Failed,Fully automated loan approval is prohibited,AI Governance,2026-06-20

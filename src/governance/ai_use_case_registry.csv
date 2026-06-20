@@ -1,0 +1,7 @@
+use_case_id,name,department,owner,business_purpose,risk_level,data_sensitivity,human_review_required,status,approved_for_demo,primary_control
+UC-001,Credit Policy Assistant,Credit Risk,Credit Risk Enablement,Answer policy questions with cited sources,Medium,Internal,Yes,Demo,Yes,Citations required for all policy answers
+UC-002,Loan File Summary,Credit Risk,Credit Risk Enablement,Summarize synthetic loan files for analyst review,High,Confidential synthetic,Yes,Demo,Yes,Human analyst remains final decision maker
+UC-003,Missing Document Detection,Operations,Operations Enablement,Identify missing required documents before analyst review,Medium,Internal,Yes,Demo,Yes,Route exceptions to operations queue
+UC-004,Invoice Field Extraction,Finance,Finance Operations,Extract invoice fields for AP review workflow,Medium,Confidential synthetic,Yes,Demo,Yes,Finance user validates extracted totals
+UC-005,Executive Portfolio Summary,Leadership,Analytics,Create portfolio summaries from curated aggregate metrics,Low,Internal,Recommended,Planned,Yes,Aggregate data only
+UC-006,Fully Automated Loan Approval,Credit Risk,Governance,Automatically approve or deny loans without analyst review,Prohibited,Restricted,Yes,Blocked,No,Use case is prohibited

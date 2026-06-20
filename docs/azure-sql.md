@@ -35,6 +35,10 @@ ifrs9_credit_risk
 ifrs9_default_rate_by_grade
 ifrs9_default_rate_by_intent
 ifrs9_default_rate_by_home_ownership
+ai_use_case_registry
+ai_tool_review_checklist
+ai_prompt_library
+ai_audit_log
 ```
 
 ## Load Tables
@@ -57,6 +61,10 @@ ifrs9_credit_risk: 29465
 ifrs9_default_rate_by_grade: 7
 ifrs9_default_rate_by_intent: 6
 ifrs9_default_rate_by_home_ownership: 4
+ai_use_case_registry: 6
+ai_tool_review_checklist: 6
+ai_prompt_library: 4
+ai_audit_log: 4
 ```
 
 Verify loaded counts:

@@ -16,6 +16,10 @@ IFRS9 = ROOT / "data" / "external" / "ifrs9" / "credit_risk_dataset_cleaned.csv"
 IFRS9_BY_GRADE = ROOT / "data" / "processed" / "ifrs9" / "default_rate_by_grade.csv"
 IFRS9_BY_INTENT = ROOT / "data" / "processed" / "ifrs9" / "default_rate_by_intent.csv"
 IFRS9_BY_HOME = ROOT / "data" / "processed" / "ifrs9" / "default_rate_by_home_ownership.csv"
+USE_CASE_REGISTRY = ROOT / "src" / "governance" / "ai_use_case_registry.csv"
+TOOL_REVIEW_CHECKLIST = ROOT / "src" / "governance" / "ai_tool_review_checklist.csv"
+PROMPT_LIBRARY = ROOT / "src" / "governance" / "prompt_library.csv"
+AUDIT_LOG_SEED = ROOT / "src" / "governance" / "ai_audit_log_seed.csv"
 
 
 def env(name: str) -> str:
@@ -71,6 +75,10 @@ def create_schema(cursor: pymssql.Cursor) -> None:
         IF OBJECT_ID('dbo.ifrs9_default_rate_by_intent', 'U') IS NOT NULL DROP TABLE dbo.ifrs9_default_rate_by_intent;
         IF OBJECT_ID('dbo.ifrs9_default_rate_by_home_ownership', 'U') IS NOT NULL DROP TABLE dbo.ifrs9_default_rate_by_home_ownership;
         IF OBJECT_ID('dbo.ifrs9_credit_risk', 'U') IS NOT NULL DROP TABLE dbo.ifrs9_credit_risk;
+        IF OBJECT_ID('dbo.ai_audit_log', 'U') IS NOT NULL DROP TABLE dbo.ai_audit_log;
+        IF OBJECT_ID('dbo.ai_prompt_library', 'U') IS NOT NULL DROP TABLE dbo.ai_prompt_library;
+        IF OBJECT_ID('dbo.ai_tool_review_checklist', 'U') IS NOT NULL DROP TABLE dbo.ai_tool_review_checklist;
+        IF OBJECT_ID('dbo.ai_use_case_registry', 'U') IS NOT NULL DROP TABLE dbo.ai_use_case_registry;
 
         CREATE TABLE dbo.document_registry (
             document_id NVARCHAR(32) NOT NULL PRIMARY KEY,
@@ -139,6 +147,57 @@ def create_schema(cursor: pymssql.Cursor) -> None:
             avg_interest_rate FLOAT NOT NULL,
             avg_loan_to_income FLOAT NOT NULL,
             default_rate FLOAT NOT NULL
+        );
+
+        CREATE TABLE dbo.ai_use_case_registry (
+            use_case_id NVARCHAR(20) NOT NULL PRIMARY KEY,
+            name NVARCHAR(160) NOT NULL,
+            department NVARCHAR(100) NOT NULL,
+            owner NVARCHAR(120) NOT NULL,
+            business_purpose NVARCHAR(500) NOT NULL,
+            risk_level NVARCHAR(30) NOT NULL,
+            data_sensitivity NVARCHAR(80) NOT NULL,
+            human_review_required NVARCHAR(20) NOT NULL,
+            status NVARCHAR(40) NOT NULL,
+            approved_for_demo BIT NOT NULL,
+            primary_control NVARCHAR(500) NOT NULL
+        );
+
+        CREATE TABLE dbo.ai_tool_review_checklist (
+            check_id NVARCHAR(20) NOT NULL PRIMARY KEY,
+            use_case_id NVARCHAR(20) NOT NULL,
+            review_area NVARCHAR(80) NOT NULL,
+            review_question NVARCHAR(500) NOT NULL,
+            status NVARCHAR(40) NOT NULL,
+            evidence NVARCHAR(800) NOT NULL,
+            reviewed_by NVARCHAR(120) NOT NULL,
+            reviewed_at DATE NOT NULL
+        );
+
+        CREATE TABLE dbo.ai_prompt_library (
+            prompt_id NVARCHAR(20) NOT NULL PRIMARY KEY,
+            use_case_id NVARCHAR(20) NOT NULL,
+            prompt_name NVARCHAR(180) NOT NULL,
+            version NVARCHAR(20) NOT NULL,
+            owner NVARCHAR(120) NOT NULL,
+            risk_level NVARCHAR(30) NOT NULL,
+            prompt_purpose NVARCHAR(500) NOT NULL,
+            allowed_data NVARCHAR(500) NOT NULL,
+            required_controls NVARCHAR(500) NOT NULL,
+            status NVARCHAR(40) NOT NULL
+        );
+
+        CREATE TABLE dbo.ai_audit_log (
+            event_id NVARCHAR(20) NOT NULL PRIMARY KEY,
+            event_timestamp DATETIMEOFFSET NOT NULL,
+            use_case_id NVARCHAR(20) NOT NULL,
+            actor_role NVARCHAR(120) NOT NULL,
+            event_type NVARCHAR(80) NOT NULL,
+            input_sensitivity NVARCHAR(80) NOT NULL,
+            output_type NVARCHAR(120) NOT NULL,
+            citations_returned BIT NOT NULL,
+            human_review_required BIT NOT NULL,
+            outcome NVARCHAR(500) NOT NULL
         );
         """
     )
@@ -222,8 +281,112 @@ def load_summary(cursor: pymssql.Cursor, path: Path, table: str, key_column: str
     return len(rows)
 
 
+def load_use_case_registry(cursor: pymssql.Cursor) -> int:
+    df = pd.read_csv(USE_CASE_REGISTRY)
+    df["approved_for_demo"] = df["approved_for_demo"].map({"Yes": 1, "No": 0})
+    rows = [tuple(row) for row in df.itertuples(index=False, name=None)]
+    insert_chunks(
+        cursor,
+        "ai_use_case_registry",
+        [
+            "use_case_id",
+            "name",
+            "department",
+            "owner",
+            "business_purpose",
+            "risk_level",
+            "data_sensitivity",
+            "human_review_required",
+            "status",
+            "approved_for_demo",
+            "primary_control",
+        ],
+        rows,
+    )
+    return len(rows)
+
+
+def load_tool_review_checklist(cursor: pymssql.Cursor) -> int:
+    df = pd.read_csv(TOOL_REVIEW_CHECKLIST)
+    rows = [tuple(row) for row in df.itertuples(index=False, name=None)]
+    insert_chunks(
+        cursor,
+        "ai_tool_review_checklist",
+        [
+            "check_id",
+            "use_case_id",
+            "review_area",
+            "review_question",
+            "status",
+            "evidence",
+            "reviewed_by",
+            "reviewed_at",
+        ],
+        rows,
+    )
+    return len(rows)
+
+
+def load_prompt_library(cursor: pymssql.Cursor) -> int:
+    df = pd.read_csv(PROMPT_LIBRARY)
+    rows = [tuple(row) for row in df.itertuples(index=False, name=None)]
+    insert_chunks(
+        cursor,
+        "ai_prompt_library",
+        [
+            "prompt_id",
+            "use_case_id",
+            "prompt_name",
+            "version",
+            "owner",
+            "risk_level",
+            "prompt_purpose",
+            "allowed_data",
+            "required_controls",
+            "status",
+        ],
+        rows,
+    )
+    return len(rows)
+
+
+def load_audit_log_seed(cursor: pymssql.Cursor) -> int:
+    df = pd.read_csv(AUDIT_LOG_SEED)
+    df["citations_returned"] = df["citations_returned"].map({"Yes": 1, "No": 0})
+    df["human_review_required"] = df["human_review_required"].map({"Yes": 1, "No": 0})
+    rows = [tuple(row) for row in df.itertuples(index=False, name=None)]
+    insert_chunks(
+        cursor,
+        "ai_audit_log",
+        [
+            "event_id",
+            "event_timestamp",
+            "use_case_id",
+            "actor_role",
+            "event_type",
+            "input_sensitivity",
+            "output_type",
+            "citations_returned",
+            "human_review_required",
+            "outcome",
+        ],
+        rows,
+    )
+    return len(rows)
+
+
 def main() -> None:
-    for path in [DOCUMENT_REGISTRY, IFRS9, IFRS9_BY_GRADE, IFRS9_BY_INTENT, IFRS9_BY_HOME]:
+    for path in [
+        DOCUMENT_REGISTRY,
+        IFRS9,
+        IFRS9_BY_GRADE,
+        IFRS9_BY_INTENT,
+        IFRS9_BY_HOME,
+        USE_CASE_REGISTRY,
+        TOOL_REVIEW_CHECKLIST,
+        PROMPT_LIBRARY,
+        AUDIT_LOG_SEED,
+    ]:
         if not path.exists():
             raise SystemExit(f"Missing required input file: {path}")
 
@@ -241,6 +404,10 @@ def main() -> None:
                 "ifrs9_default_rate_by_home_ownership",
                 "person_home_ownership",
             ),
+            "ai_use_case_registry": load_use_case_registry(cursor),
+            "ai_tool_review_checklist": load_tool_review_checklist(cursor),
+            "ai_prompt_library": load_prompt_library(cursor),
+            "ai_audit_log": load_audit_log_seed(cursor),
         }
         conn.commit()
 

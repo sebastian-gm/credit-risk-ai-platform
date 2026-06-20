@@ -126,10 +126,16 @@ python3 src/ingestion/profile_ifrs9_dataset.py
 
 ## Azure SQL Load
 
-Load governed metadata and structured analytics tables:
+Load governed metadata, structured analytics, and AI governance tables:
 
 ```bash
 python3 scripts/load_sql_tables.py
+```
+
+Governance source files are stored under:
+
+```text
+src/governance/
 ```
 
 ## Retrieval Layer

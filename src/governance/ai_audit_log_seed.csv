@@ -1,0 +1,5 @@
+event_id,event_timestamp,use_case_id,actor_role,event_type,input_sensitivity,output_type,citations_returned,human_review_required,outcome
+AUD-0001,2026-06-20T09:15:00Z,UC-001,Analyst,rag_query,Internal,Cited answer,Yes,Yes,Answered policy question
+AUD-0002,2026-06-20T09:20:00Z,UC-001,Evaluator,evaluation_run,Internal,Evaluation metrics,Yes,Yes,RAG evaluation passed
+AUD-0003,2026-06-20T09:30:00Z,UC-004,Finance Reviewer,document_extraction,Confidential synthetic,Invoice field summary,No,Yes,Extracted invoice fields
+AUD-0004,2026-06-20T09:40:00Z,UC-006,Governance Reviewer,use_case_review,Restricted,Blocked decision,No,Yes,Rejected prohibited use case

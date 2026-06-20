@@ -13,6 +13,10 @@ TABLES = [
     "ifrs9_default_rate_by_grade",
     "ifrs9_default_rate_by_intent",
     "ifrs9_default_rate_by_home_ownership",
+    "ai_use_case_registry",
+    "ai_tool_review_checklist",
+    "ai_prompt_library",
+    "ai_audit_log",
 ]
 
 
