@@ -12,6 +12,7 @@ import urllib.request
 SEARCH_INDEX = "credit-risk-documents"
 SEARCH_API_VERSION = "2024-07-01"
 OPENAI_API_VERSION = "2024-10-21"
+VECTOR_DIMENSIONS = 1536
 
 
 def env(name: str, default: str | None = None) -> str:
@@ -36,15 +37,43 @@ def post_json(url: str, headers: dict[str, str], payload: object) -> dict:
         raise SystemExit(f"Request failed: {exc.code} {details}") from exc
 
 
+def optional_env(name: str) -> str | None:
+    return os.environ.get(name)
+
+
+def embed_query(question: str) -> list[float] | None:
+    endpoint = optional_env("AZURE_OPENAI_ENDPOINT")
+    key = optional_env("AZURE_OPENAI_API_KEY")
+    deployment = optional_env("AZURE_OPENAI_EMBEDDING_DEPLOYMENT")
+    if not endpoint or not key or not deployment:
+        return None
+
+    url = f"{endpoint.rstrip('/')}/openai/deployments/{deployment}/embeddings?api-version={OPENAI_API_VERSION}"
+    payload = {"input": question, "dimensions": VECTOR_DIMENSIONS}
+    data = post_json(url, {"api-key": key}, payload)
+    return data["data"][0]["embedding"]
+
+
 def search_documents(question: str, top: int = 5) -> list[dict]:
     endpoint = env("AZURE_SEARCH_ENDPOINT").rstrip("/")
     key = env("AZURE_SEARCH_ADMIN_KEY")
     url = f"{endpoint}/indexes/{SEARCH_INDEX}/docs/search?api-version={SEARCH_API_VERSION}"
+    vector = embed_query(question)
     payload = {
         "search": question,
         "top": top,
         "select": "title,content,source_path,raw_data_lake_path,document_type,department,sensitivity_label",
     }
+    if vector:
+        payload["vectorQueries"] = [
+            {
+                "kind": "vector",
+                "vector": vector,
+                "fields": "content_vector",
+                "k": top,
+                "exhaustive": False,
+            }
+        ]
     data = post_json(url, {"api-key": key}, payload)
     return data.get("value", [])
 

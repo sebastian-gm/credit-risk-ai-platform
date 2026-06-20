@@ -53,13 +53,14 @@ Azure SQL region: Canada Central
 Azure AI Search: srch-crai-dev-canadacentral-6fecno
 Azure OpenAI: aoai-crai-dev-eastus2-6fecno
 Azure OpenAI deployment: gpt-5-mini
+Azure OpenAI embedding deployment: text-embedding-3-small
 ```
 
 Current scope:
 
 - low-cost Azure foundation;
 - serverless Azure SQL metadata/analytics layer;
-- Azure AI Search retrieval layer;
+- Azure AI Search hybrid vector retrieval layer;
 - Azure OpenAI grounded assistant layer;
 - no Document Intelligence deployment yet;
 - no real data.

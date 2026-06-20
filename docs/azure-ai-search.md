@@ -11,8 +11,8 @@ Index: credit-risk-documents
 Source data: synthetic business documents
 ```
 
-The first index is metadata-rich keyword search. Vector search and Azure OpenAI
-embeddings are planned for the next retrieval-quality phase.
+The index supports metadata-rich keyword search and vector search. Hybrid
+queries combine BM25 keyword retrieval with Azure OpenAI embeddings.
 
 The core resource group is in East US 2, but Search is configured separately
 because capacity can vary by region.
@@ -60,11 +60,23 @@ AZURE_SEARCH_ADMIN_KEY="<admin-key>" \
 python3 scripts/load_ai_search_index.py
 ```
 
+Generate embeddings before loading the vector-enabled index:
+
+```bash
+AZURE_OPENAI_ENDPOINT="https://<openai-resource>.openai.azure.com/" \
+AZURE_OPENAI_API_KEY="<openai-key>" \
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT="text-embedding-3-small" \
+python3 src/search/build_search_embeddings.py
+```
+
 Run a test query:
 
 ```bash
 AZURE_SEARCH_ENDPOINT="https://<search-service>.search.windows.net" \
 AZURE_SEARCH_ADMIN_KEY="<admin-key>" \
+AZURE_OPENAI_ENDPOINT="https://<openai-resource>.openai.azure.com/" \
+AZURE_OPENAI_API_KEY="<openai-key>" \
+AZURE_OPENAI_EMBEDDING_DEPLOYMENT="text-embedding-3-small" \
 python3 scripts/query_ai_search.py "debt-to-income above 45 exception review policy"
 ```
 
@@ -83,5 +95,8 @@ The current pipeline creates:
 ```text
 Index: credit-risk-documents
 Chunks: 20
+Embedded chunks: 20
+Embedding model: text-embedding-3-small
+Vector dimensions: 1536
 Contains real data: false
 ```

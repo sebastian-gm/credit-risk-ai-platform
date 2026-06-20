@@ -12,6 +12,12 @@ Indexed chunks:
 20
 ```
 
+Retrieval mode:
+
+```text
+Hybrid vector + keyword search
+```
+
 ## Query: DTI Exception Review
 
 Query:
@@ -28,6 +34,12 @@ Source: policies/credit_policy_2026.md
 Citation: raw/synthetic/policies/credit_policy_2026.md
 Document type: policy
 Department: Compliance
+```
+
+Observed hybrid retrieval rank:
+
+```text
+1
 ```
 
 ## Query: Small-Business Required Documents
@@ -74,8 +86,10 @@ Top results:
 This validates the first retrieval layer for RAG:
 
 - source documents are chunked;
+- source chunks are embedded with Azure OpenAI;
+- Azure AI Search stores a vector field for semantic similarity;
+- hybrid retrieval combines keyword and vector signals;
 - metadata travels with each chunk;
 - retrieval returns cited source paths;
 - governance labels are available for filtering;
 - no real data is indexed.
-

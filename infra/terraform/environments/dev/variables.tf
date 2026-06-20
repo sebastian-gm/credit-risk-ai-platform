@@ -81,6 +81,36 @@ variable "openai_chat_deployment_capacity" {
   default     = 10
 }
 
+variable "openai_embedding_model_name" {
+  description = "Embedding model deployed for vector retrieval."
+  type        = string
+  default     = "text-embedding-3-small"
+}
+
+variable "openai_embedding_model_version" {
+  description = "Embedding model version deployed for vector retrieval."
+  type        = string
+  default     = "1"
+}
+
+variable "openai_embedding_deployment_name" {
+  description = "Azure OpenAI deployment name used by embedding scripts."
+  type        = string
+  default     = "text-embedding-3-small"
+}
+
+variable "openai_embedding_deployment_sku" {
+  description = "Azure OpenAI embedding deployment SKU."
+  type        = string
+  default     = "GlobalStandard"
+}
+
+variable "openai_embedding_deployment_capacity" {
+  description = "Azure OpenAI embedding deployment capacity in thousands of tokens per minute."
+  type        = number
+  default     = 10
+}
+
 variable "tags" {
   description = "Common Azure tags."
   type        = map(string)

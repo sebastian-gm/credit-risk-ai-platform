@@ -154,3 +154,19 @@ resource "azurerm_cognitive_deployment" "chat" {
     capacity = var.openai_chat_deployment_capacity
   }
 }
+
+resource "azurerm_cognitive_deployment" "embeddings" {
+  name                 = var.openai_embedding_deployment_name
+  cognitive_account_id = azurerm_cognitive_account.openai.id
+
+  model {
+    format  = "OpenAI"
+    name    = var.openai_embedding_model_name
+    version = var.openai_embedding_model_version
+  }
+
+  sku {
+    name     = var.openai_embedding_deployment_sku
+    capacity = var.openai_embedding_deployment_capacity
+  }
+}

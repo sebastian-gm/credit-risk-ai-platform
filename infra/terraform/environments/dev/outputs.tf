@@ -50,3 +50,7 @@ output "openai_endpoint" {
 output "openai_chat_deployment_name" {
   value = azurerm_cognitive_deployment.chat.name
 }
+
+output "openai_embedding_deployment_name" {
+  value = azurerm_cognitive_deployment.embeddings.name
+}
