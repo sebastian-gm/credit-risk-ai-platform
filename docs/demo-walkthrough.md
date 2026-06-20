@@ -153,6 +153,27 @@ CHK-006, UC-006, Acceptable Use, Failed, Fully automated loan approval is prohib
 
 This proves the demo includes an AI governance layer, not only retrieval and extraction scripts.
 
+## 7. Azure AI Foundry Check
+
+Evidence file:
+
+- [foundry-project-summary.md](evidence/foundry/foundry-project-summary.md)
+
+Foundry resource group:
+
+```text
+rg-crai-foundry-dev-eastus2
+```
+
+Foundry project endpoint:
+
+```text
+https://ai-account-dosuleocw4nxo.services.ai.azure.com/api/projects/crai-foundry-project
+```
+
+The `gpt-5-mini` deployment is running on the Foundry account and supports both
+Responses and Agents v2. A project endpoint test completed successfully.
+
 ## Demo Script
 
 Use this sequence when showing the project:
@@ -164,6 +185,7 @@ Use this sequence when showing the project:
 5. Show `invoice-extraction-summary.json` for Document Intelligence extraction.
 6. Show `rag-evaluation-results.md` to prove the assistant behavior is measured.
 7. Show the blocked `UC-006` use case in the governance registry.
+8. Show `foundry-project-summary.md` to prove the Foundry project and model endpoint are working.
 
 ## Evidence Snapshot
 
