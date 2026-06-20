@@ -83,3 +83,26 @@ Upload it to the raw Data Lake filesystem with:
 ```bash
 python3 scripts/upload_synthetic_data.py
 ```
+
+## Ingestion Registry
+
+Build document metadata from the synthetic dataset:
+
+```bash
+python3 src/ingestion/build_document_registry.py
+```
+
+Upload the registry to the processed Data Lake filesystem:
+
+```bash
+python3 scripts/upload_processed_registry.py
+```
+
+Current registry output:
+
+```text
+23 document records
+0 real-data records
+raw path: raw/synthetic/
+processed path: processed/document_registry/
+```

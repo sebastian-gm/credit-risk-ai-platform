@@ -21,6 +21,16 @@ customers, lenders, bank records, employers, or credit-bureau data.
 - compliance and governance checklists;
 - operations report.
 
+Current generated size:
+
+```text
+23 files
+6 synthetic loan applications
+6 underwriting memos
+3 policy documents
+3 structured datasets
+```
+
 ## Generation
 
 The dataset is generated with:
