@@ -106,3 +106,20 @@ Current registry output:
 raw path: raw/synthetic/
 processed path: processed/document_registry/
 ```
+
+## External Structured Dataset
+
+The project also includes the Kaggle `Credit Risk Dataset` by Lao Tse as a
+structured analytics source under `data/external/ifrs9`.
+
+License:
+
+```text
+CC0: Public Domain
+```
+
+Generate analytics profile outputs:
+
+```bash
+python3 src/ingestion/profile_ifrs9_dataset.py
+```

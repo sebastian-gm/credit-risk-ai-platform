@@ -42,6 +42,8 @@ Storage account: stcraidev6fecno
 Data Lake filesystems: raw, processed, curated
 Uploaded raw dataset path: raw/synthetic/
 Uploaded processed registry path: processed/document_registry/
+Uploaded external IFRS9 path: raw/external/credit_risk_ifrs9/
+Uploaded IFRS9 profile path: processed/ifrs9/
 Key Vault: kv-crai-dev-6fecno
 Log Analytics: law-crai-dev
 Application Insights: appi-crai-dev

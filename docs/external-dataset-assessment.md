@@ -104,15 +104,18 @@ Use the IFRS 9 CSV for:
 - model monitoring examples;
 - future responsible-AI evaluation examples.
 
-## Public Repo Caution
+## License Confirmation
 
-Before committing the IFRS 9 CSV into this repository, confirm the original
-dataset license from its upstream source. If the license is unclear, prefer one
-of these approaches:
+The Kaggle page for `laotse/credit-risk-dataset` exposes structured dataset
+metadata that lists:
 
-1. document the source and provide an import script;
-2. commit only a small derived sample with attribution;
-3. keep the full CSV outside the repo and load it during local setup.
+```text
+License: CC0: Public Domain
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+```
+
+Because the license is CC0, the cleaned CSV can be included with attribution
+and source documentation.
 
 ## Decision
 
@@ -120,7 +123,6 @@ Current direction:
 
 ```text
 Synthetic documents: keep
-IFRS 9 CSV: add as structured portfolio/risk analytics source after license check
+IFRS 9 CSV: include as structured portfolio/risk analytics source
 PD pickle artifacts: do not use as primary platform data source
 ```
-
