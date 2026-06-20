@@ -30,3 +30,11 @@ output "sql_admin_password" {
   value     = random_password.sql_admin.result
   sensitive = true
 }
+
+output "search_service_name" {
+  value = azurerm_search_service.main.name
+}
+
+output "search_service_endpoint" {
+  value = "https://${azurerm_search_service.main.name}.search.windows.net"
+}

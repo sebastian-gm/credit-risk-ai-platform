@@ -131,3 +131,18 @@ Load governed metadata and structured analytics tables:
 ```bash
 python3 scripts/load_sql_tables.py
 ```
+
+## Retrieval Layer
+
+Generate source-document chunks and load them into Azure AI Search:
+
+```bash
+python3 src/search/build_search_chunks.py
+python3 scripts/load_ai_search_index.py
+```
+
+Run a citation-ready retrieval query:
+
+```bash
+python3 scripts/query_ai_search.py "debt-to-income above 45 exception review policy"
+```

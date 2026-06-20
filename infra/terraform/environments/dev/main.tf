@@ -15,9 +15,10 @@ resource "random_password" "sql_admin" {
 }
 
 locals {
-  name_prefix     = "${var.project}-${var.environment}"
-  region_code     = replace(var.location, " ", "")
-  sql_region_code = replace(var.sql_location, " ", "")
+  name_prefix        = "${var.project}-${var.environment}"
+  region_code        = replace(var.location, " ", "")
+  sql_region_code    = replace(var.sql_location, " ", "")
+  search_region_code = replace(var.search_location, " ", "")
   common_tags = merge(var.tags, {
     managed_by = "terraform"
   })
@@ -115,4 +116,12 @@ resource "azurerm_mssql_database" "main" {
   max_size_gb                 = 1
   storage_account_type        = "Local"
   tags                        = local.common_tags
+}
+
+resource "azurerm_search_service" "main" {
+  name                = "srch-${local.name_prefix}-${local.search_region_code}-${random_string.suffix.result}"
+  resource_group_name = azurerm_resource_group.main.name
+  location            = var.search_location
+  sku                 = "free"
+  tags                = local.common_tags
 }

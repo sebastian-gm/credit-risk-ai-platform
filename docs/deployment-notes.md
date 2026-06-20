@@ -50,14 +50,15 @@ Application Insights: appi-crai-dev
 Azure SQL Server: sql-crai-dev-canadacentral-6fecno
 Azure SQL Database: sqldb-crai-dev
 Azure SQL region: Canada Central
+Azure AI Search: srch-crai-dev-canadacentral-6fecno
 ```
 
 Current scope:
 
 - low-cost Azure foundation;
 - serverless Azure SQL metadata/analytics layer;
+- Azure AI Search retrieval layer;
 - no Azure OpenAI deployment yet;
-- no Azure AI Search deployment yet;
 - no Document Intelligence deployment yet;
 - no real data.
 
@@ -69,6 +70,12 @@ ifrs9_credit_risk: 29,465 rows
 ifrs9_default_rate_by_grade: 7 rows
 ifrs9_default_rate_by_intent: 6 rows
 ifrs9_default_rate_by_home_ownership: 4 rows
+```
+
+Azure AI Search loaded index:
+
+```text
+credit-risk-documents: 20 chunks
 ```
 
 Screenshot targets:

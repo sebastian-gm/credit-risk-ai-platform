@@ -39,6 +39,12 @@ variable "sql_location" {
   default     = "canadacentral"
 }
 
+variable "search_location" {
+  description = "Azure region for Azure AI Search resources. Kept separate because Search capacity can differ by region."
+  type        = string
+  default     = "canadacentral"
+}
+
 variable "tags" {
   description = "Common Azure tags."
   type        = map(string)
