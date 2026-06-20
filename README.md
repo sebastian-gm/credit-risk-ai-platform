@@ -162,3 +162,11 @@ Generate and analyze a synthetic invoice with Azure AI Document Intelligence:
 python3 src/extraction/create_synthetic_invoice_pdf.py
 python3 scripts/analyze_invoice_document.py
 ```
+
+## Evaluation
+
+Run the RAG evaluation harness:
+
+```bash
+python3 scripts/run_rag_evaluation.py
+```

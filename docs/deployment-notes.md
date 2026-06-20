@@ -63,6 +63,7 @@ Current scope:
 - serverless Azure SQL metadata/analytics layer;
 - Azure AI Search hybrid vector retrieval layer;
 - Azure OpenAI grounded assistant layer;
+- RAG evaluation harness;
 - Azure AI Document Intelligence invoice extraction layer;
 - no real data.
 

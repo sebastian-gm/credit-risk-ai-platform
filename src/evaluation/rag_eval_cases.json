@@ -1,0 +1,26 @@
+[
+  {
+    "id": "dti_exception_policy",
+    "question": "What policy applies when debt-to-income is above 45%?",
+    "expected_citation": "raw/synthetic/policies/credit_policy_2026.md",
+    "required_answer_terms": ["exception review"]
+  },
+  {
+    "id": "small_business_required_documents",
+    "question": "What documents are required for small-business loans?",
+    "expected_citation": "raw/synthetic/policies/document_checklist_policy.md",
+    "required_answer_terms": ["business bank-statement summary", "compliance checklist"]
+  },
+  {
+    "id": "missing_document_detection",
+    "question": "Where should missing required documents be routed?",
+    "expected_citation": "raw/synthetic/policies/document_checklist_policy.md",
+    "required_answer_terms": ["operations"]
+  },
+  {
+    "id": "prohibited_automation",
+    "question": "Can the AI assistant approve or deny a loan automatically?",
+    "expected_citation": "raw/synthetic/compliance/ai_use_case_registry.md",
+    "required_answer_terms": ["prohibited", "human analyst"]
+  }
+]
