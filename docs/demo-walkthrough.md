@@ -171,6 +171,10 @@ A portfolio-friendly screenshot summary is saved here:
 
 - [evidence-summary.png](evidence/evidence-summary.png)
 
+Azure Portal screenshots are saved here:
+
+- [azure-portal/](evidence/azure-portal/)
+
 ## Notes
 
 - This is a portfolio demo using synthetic data.
