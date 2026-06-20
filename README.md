@@ -176,3 +176,14 @@ Run the RAG evaluation harness:
 ```bash
 python3 scripts/run_rag_evaluation.py
 ```
+
+## Demo Evidence
+
+The current demo evidence package is documented here:
+
+- [Demo walkthrough](docs/demo-walkthrough.md)
+- [Evidence summary image](docs/evidence/evidence-summary.png)
+
+It includes SQL row counts, hybrid retrieval output, a cited assistant answer,
+Document Intelligence invoice extraction, RAG evaluation results, and governance
+review evidence.

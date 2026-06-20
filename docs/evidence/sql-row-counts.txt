@@ -1,0 +1,9 @@
+document_registry: 23
+ifrs9_credit_risk: 29465
+ifrs9_default_rate_by_grade: 7
+ifrs9_default_rate_by_intent: 6
+ifrs9_default_rate_by_home_ownership: 4
+ai_use_case_registry: 6
+ai_tool_review_checklist: 6
+ai_prompt_library: 4
+ai_audit_log: 4

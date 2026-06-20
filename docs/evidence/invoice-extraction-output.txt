@@ -1,0 +1,31 @@
+{
+  "model_id": "prebuilt-invoice",
+  "status": "succeeded",
+  "fields": {
+    "VendorName": "Northstar Office Supplies",
+    "CustomerName": "LumaCredit Finance Operations",
+    "InvoiceId": "INV-2026-1042",
+    "InvoiceDate": "2026-06-15",
+    "DueDate": "2026-07-15",
+    "SubTotal": {
+      "currencySymbol": "USD",
+      "amount": 1525.0,
+      "currencyCode": "USD"
+    },
+    "TotalTax": {
+      "currencySymbol": "USD",
+      "amount": 106.75,
+      "currencyCode": "USD"
+    },
+    "InvoiceTotal": {
+      "currencySymbol": "USD",
+      "amount": 1631.75,
+      "currencyCode": "USD"
+    }
+  },
+  "item_count": 0,
+  "content_excerpt": "INVOICE\nVendor: Northstar Office Supplies\nVendor Address: 100 Harbor Street, Miami, FL 33131\nBill To: LumaCredit Finance Operations\nCustomer Address: 250 Brickell Avenue, Miami, FL 33131\nInvoice Number: INV-2026-1042\nInvoice Date: 2026-06-15\nDue Date: 2026-07-15\nDescription\nQuantity Unit Price Amount\nDocument scanning service\n1\n450.00\n450.00\nSecure file storage\n3\n75.00\n225.00\nWorkflow automation setup\n1\n850.00\n850.00\nSubtotal: USD 1,525.00\nTax: USD 106.75\nInvoice Total: USD 1,631.75\nPayment Term",
+  "contains_real_data": false
+}
+Wrote raw result to /home/megagdev/megagdev/study/ai_engineer/credit-risk-ai-platform/data/processed/document_intelligence/synthetic_invoice_raw.json
+Wrote summary to /home/megagdev/megagdev/study/ai_engineer/credit-risk-ai-platform/data/processed/document_intelligence/synthetic_invoice_summary.json

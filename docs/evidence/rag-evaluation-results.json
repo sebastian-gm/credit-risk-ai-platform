@@ -1,0 +1,95 @@
+{
+  "summary": {
+    "case_count": 4,
+    "retrieval_hit_rate_at_5": 1.0,
+    "answer_non_empty_rate": 1.0,
+    "answer_term_pass_rate": 1.0,
+    "mean_reciprocal_rank": 0.875,
+    "all_cases_passed": true
+  },
+  "results": [
+    {
+      "id": "dti_exception_policy",
+      "question": "What policy applies when debt-to-income is above 45%?",
+      "expected_citation": "raw/synthetic/policies/credit_policy_2026.md",
+      "expected_citation_rank": 1,
+      "retrieval_hit_at_5": true,
+      "answer_non_empty": true,
+      "answer_term_pass": true,
+      "required_answer_terms": [
+        "exception review"
+      ],
+      "answer": "Applications with a debt-to-income ratio above 45% require exception review. (Source: raw/synthetic/policies/credit_policy_2026.md; see also raw/synthetic/underwriting_memos/APP-2026-0004_memo.md)",
+      "retrieved_citations": [
+        "raw/synthetic/policies/credit_policy_2026.md",
+        "raw/synthetic/underwriting_memos/APP-2026-0001_memo.md",
+        "raw/synthetic/underwriting_memos/APP-2026-0006_memo.md",
+        "raw/synthetic/underwriting_memos/APP-2026-0004_memo.md",
+        "raw/synthetic/underwriting_memos/APP-2026-0003_memo.md"
+      ]
+    },
+    {
+      "id": "small_business_required_documents",
+      "question": "What documents are required for small-business loans?",
+      "expected_citation": "raw/synthetic/policies/document_checklist_policy.md",
+      "expected_citation_rank": 1,
+      "retrieval_hit_at_5": true,
+      "answer_non_empty": true,
+      "answer_term_pass": true,
+      "required_answer_terms": [
+        "business bank-statement summary",
+        "compliance checklist"
+      ],
+      "answer": "Required documents for small-business loans:\n- completed application form\n- business bank-statement summary\n- business tax return or owner income support\n- ownership attestation\n- compliance checklist\n\nSource: raw/synthetic/policies/document_checklist_policy.md\n\n(Policy also states missing required documents should route the file to Operations before final analyst review. Source: raw/synthetic/policies/document_checklist_policy.md)",
+      "retrieved_citations": [
+        "raw/synthetic/policies/document_checklist_policy.md",
+        "raw/synthetic/loan_applications/APP-2026-0005.json",
+        "raw/synthetic/underwriting_memos/APP-2026-0005_memo.md",
+        "raw/synthetic/loan_applications/APP-2026-0002.json",
+        "raw/synthetic/underwriting_memos/APP-2026-0002_memo.md"
+      ]
+    },
+    {
+      "id": "missing_document_detection",
+      "question": "Where should missing required documents be routed?",
+      "expected_citation": "raw/synthetic/policies/document_checklist_policy.md",
+      "expected_citation_rank": 2,
+      "retrieval_hit_at_5": true,
+      "answer_non_empty": true,
+      "answer_term_pass": true,
+      "required_answer_terms": [
+        "operations"
+      ],
+      "answer": "Missing required documents should be routed to Operations before final analyst review. (raw/synthetic/policies/document_checklist_policy.md)",
+      "retrieved_citations": [
+        "raw/synthetic/fraud_notes/address_mismatch_review.md",
+        "raw/synthetic/policies/document_checklist_policy.md",
+        "raw/synthetic/compliance/manual_review_checklist.md",
+        "raw/synthetic/operations/weekly_credit_ops_report.md",
+        "raw/synthetic/policies/fair_lending_policy.md"
+      ]
+    },
+    {
+      "id": "prohibited_automation",
+      "question": "Can the AI assistant approve or deny a loan automatically?",
+      "expected_citation": "raw/synthetic/compliance/ai_use_case_registry.md",
+      "expected_citation_rank": 1,
+      "retrieval_hit_at_5": true,
+      "answer_non_empty": true,
+      "answer_term_pass": true,
+      "required_answer_terms": [
+        "prohibit",
+        "human analyst"
+      ],
+      "answer": "No. Fully automated loan approval or denial is prohibited \u2014 the AI may summarize and cite policy/documents but must not make final credit decisions. See:\n\n- raw/synthetic/compliance/ai_use_case_registry.md (\"Prohibited use: Fully automated loan approval, denial, pricing, or adverse action generation.\")\n- raw/synthetic/policies/credit_policy_2026.md (\"the AI assistant... must not approve, reject, or price a loan. Final decisions require an authorized human analyst.\")\n- raw/synthetic/policies/fair_lending_policy.md (\"Prohibited uses: - automated final approval or denial; ... Required controls: human-in-the-loop review;\")\n- raw/synthetic/underwriting_memos/APP-2026-0003_memo.md (\"AI may summarize this file and cite policy sections, but final credit decisions require human analyst review.\")\n- raw/synthetic/compliance/manual_review_checklist.md (\"no final decision is made solely from AI output.\")",
+      "retrieved_citations": [
+        "raw/synthetic/compliance/ai_use_case_registry.md",
+        "raw/synthetic/policies/credit_policy_2026.md",
+        "raw/synthetic/policies/fair_lending_policy.md",
+        "raw/synthetic/underwriting_memos/APP-2026-0003_memo.md",
+        "raw/synthetic/compliance/manual_review_checklist.md"
+      ]
+    }
+  ],
+  "contains_real_data": false
+}

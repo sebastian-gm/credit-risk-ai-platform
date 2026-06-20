@@ -1,0 +1,8 @@
+Applications with a debt-to-income ratio above 45% require an exception review. (See raw/synthetic/policies/credit_policy_2026.md; also noted in raw/synthetic/underwriting_memos/APP-2026-0001_memo.md, APP-2026-0006_memo.md, and APP-2026-0004_memo.md.)
+
+Citations retrieved:
+- raw/synthetic/policies/credit_policy_2026.md
+- raw/synthetic/underwriting_memos/APP-2026-0001_memo.md
+- raw/synthetic/underwriting_memos/APP-2026-0006_memo.md
+- raw/synthetic/underwriting_memos/APP-2026-0004_memo.md
+- raw/synthetic/underwriting_memos/APP-2026-0003_memo.md

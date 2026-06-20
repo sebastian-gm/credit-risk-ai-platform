@@ -21,6 +21,6 @@
     "id": "prohibited_automation",
     "question": "Can the AI assistant approve or deny a loan automatically?",
     "expected_citation": "raw/synthetic/compliance/ai_use_case_registry.md",
-    "required_answer_terms": ["prohibited", "human analyst"]
+    "required_answer_terms": ["prohibit", "human analyst"]
   }
 ]

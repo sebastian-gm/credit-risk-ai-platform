@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Credit Risk AI Platform Evidence Summary</title>
+  <style>
+    :root {
+      --bg: #f4efe5;
+      --card: #faf6eb;
+      --ink: #111827;
+      --muted: #4b5563;
+      --teal: #2e6f73;
+      --gold: #9a7436;
+      --border: #d8cdbb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 900px;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 20% 0%, rgba(46, 111, 115, 0.12), transparent 28%), var(--bg);
+      overflow: hidden;
+    }
+
+    main {
+      padding: 46px 64px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      align-items: flex-start;
+      border-bottom: 2px solid rgba(154, 116, 54, 0.35);
+      padding-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 48px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--teal);
+      font-size: 21px;
+      font-weight: 650;
+    }
+
+    .badge {
+      border: 1px solid rgba(46, 111, 115, 0.25);
+      background: rgba(46, 111, 115, 0.1);
+      color: var(--teal);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      min-height: 174px;
+      border: 1px solid var(--border);
+      background: rgba(250, 246, 235, 0.88);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(54, 43, 27, 0.1);
+    }
+
+    .card h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      font-size: 18px;
+    }
+
+    .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .metric {
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .caption {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .mono {
+      color: var(--teal);
+      font-weight: 760;
+    }
+
+    .flow {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .step {
+      border: 1px solid rgba(154, 116, 54, 0.28);
+      border-radius: 14px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.38);
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -16px;
+      top: 42%;
+      color: var(--gold);
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .step strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .step span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Credit Risk AI Platform</h1>
+        <p class="subtitle">Live Azure evidence for cited answers, extraction, evaluation, and governance</p>
+      </div>
+      <div class="badge">Synthetic Data Only</div>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h2><span class="num">1</span>SQL Data Foundation</h2>
+        <p class="metric">29,465</p>
+        <p class="caption">credit-risk rows loaded, plus <span class="mono">23</span> document registry records and governance tables.</p>
+      </article>
+
+      <article class="card">
+        <h2><span class="num">2</span>Grounded Retrieval</h2>
+        <p class="metric">Top 1</p>
+        <p class="caption">DTI policy question returns <span class="mono">Credit Policy 2026</span> as the first source.</p>
+      </article>
+
+      <article class="card">
+        <h2><span class="num">3</span>RAG Evaluation</h2>
+        <p class="metric">1.00</p>
+        <p class="caption">retrieval hit rate @5, answer non-empty rate, and answer term pass rate across 4 cases.</p>
+      </article>
+
+      <article class="card">
+        <h2><span class="num">4</span>Document Intelligence</h2>
+        <p class="metric">$1,631.75</p>
+        <p class="caption">invoice total extracted from a synthetic AP invoice with vendor, customer, dates, subtotal, and tax.</p>
+      </article>
+
+      <article class="card">
+        <h2><span class="num">5</span>Governance</h2>
+        <p class="metric">UC-006</p>
+        <p class="caption">fully automated loan approval is blocked as a prohibited use case.</p>
+      </article>
+
+      <article class="card">
+        <h2><span class="num">6</span>Human Review</h2>
+        <p class="metric">Required</p>
+        <p class="caption">final lending decisions and invoice payment actions remain outside automation.</p>
+      </article>
+
+      <article class="card flow">
+        <div class="step">
+          <strong>Data Sources</strong>
+          <span>loan files, policies, invoices, structured credit data</span>
+        </div>
+        <div class="step">
+          <strong>Azure Foundation</strong>
+          <span>Data Lake, SQL, Key Vault, monitoring</span>
+        </div>
+        <div class="step">
+          <strong>Search + OpenAI</strong>
+          <span>hybrid retrieval, embeddings, cited answers</span>
+        </div>
+        <div class="step">
+          <strong>Extraction</strong>
+          <span>Document Intelligence invoice fields</span>
+        </div>
+        <div class="step">
+          <strong>Governance</strong>
+          <span>registry, checklist, prompts, audit events</span>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      Evidence generated from live Azure resources on June 20, 2026. No production applicant, customer, or payment data is used.
+    </footer>
+  </main>
+</body>
+</html>

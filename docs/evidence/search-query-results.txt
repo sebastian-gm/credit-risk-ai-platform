@@ -1,0 +1,33 @@
+Query: What policy applies when debt-to-income is above 45%?
+Mode: hybrid vector + keyword
+
+1. Credit Policy 2026 | score: 0.0331
+   source: policies/credit_policy_2026.md
+   type: policy | department: Compliance
+   citation: raw/synthetic/policies/credit_policy_2026.md
+   excerpt: # LumaCredit Credit Policy 2026  ## Purpose  This policy defines underwriting guidance for personal loans and small-business loans. All examples are synthetic.  ## Minimum Review Standards  Applications with a credit score below 640 require manual review. Appl...
+
+2. App 2026 0001 Memo | score: 0.0320
+   source: underwriting_memos/APP-2026-0001_memo.md
+   type: underwriting_memo | department: Credit Risk
+   citation: raw/synthetic/underwriting_memos/APP-2026-0001_memo.md
+   excerpt: # Underwriting Memo: APP-2026-0001  Applicant: Maya Torres Product: Personal Loan Requested amount: $18,500 Credit score: 704 Debt-to-income ratio: 31% Employment history: 48 months Risk band: B  ## Analyst Notes  This synthetic file is currently marked as `ma...
+
+3. App 2026 0006 Memo | score: 0.0315
+   source: underwriting_memos/APP-2026-0006_memo.md
+   type: underwriting_memo | department: Credit Risk
+   citation: raw/synthetic/underwriting_memos/APP-2026-0006_memo.md
+   excerpt: # Underwriting Memo: APP-2026-0006  Applicant: Owen Patel Product: Personal Loan Requested amount: $31,500 Credit score: 658 Debt-to-income ratio: 45% Employment history: 27 months Risk band: C  ## Analyst Notes  This synthetic file is currently marked as `fra...
+
+4. App 2026 0004 Memo | score: 0.0311
+   source: underwriting_memos/APP-2026-0004_memo.md
+   type: underwriting_memo | department: Credit Risk
+   citation: raw/synthetic/underwriting_memos/APP-2026-0004_memo.md
+   excerpt: # Underwriting Memo: APP-2026-0004  Applicant: Leo Martin Product: Personal Loan Requested amount: $27,800 Credit score: 626 Debt-to-income ratio: 49% Employment history: 15 months Risk band: D  ## Analyst Notes  This synthetic file is currently marked as `exc...
+
+5. App 2026 0003 Memo | score: 0.0310
+   source: underwriting_memos/APP-2026-0003_memo.md
+   type: underwriting_memo | department: Credit Risk
+   citation: raw/synthetic/underwriting_memos/APP-2026-0003_memo.md
+   excerpt: # Underwriting Memo: APP-2026-0003  Applicant: Nadia Chen Product: Personal Loan Requested amount: $9,200 Credit score: 742 Debt-to-income ratio: 24% Employment history: 61 months Risk band: A  ## Analyst Notes  This synthetic file is currently marked as `read...
+

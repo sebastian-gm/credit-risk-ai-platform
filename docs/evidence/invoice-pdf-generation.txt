@@ -1,0 +1,1 @@
+Wrote synthetic invoice PDF to /home/megagdev/megagdev/study/ai_engineer/credit-risk-ai-platform/data/processed/extraction_samples/synthetic_invoice_lumacredit.pdf

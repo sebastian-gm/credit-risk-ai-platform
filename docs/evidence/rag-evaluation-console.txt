@@ -1,0 +1,12 @@
+Evaluating dti_exception_policy
+Evaluating small_business_required_documents
+Evaluating missing_document_detection
+Evaluating prohibited_automation
+{
+  "case_count": 4,
+  "retrieval_hit_rate_at_5": 1.0,
+  "answer_non_empty_rate": 1.0,
+  "answer_term_pass_rate": 1.0,
+  "mean_reciprocal_rank": 0.875,
+  "all_cases_passed": true
+}
