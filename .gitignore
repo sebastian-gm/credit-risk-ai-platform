@@ -15,6 +15,7 @@ venv/
 *.tfvars
 !.tfvars.example
 tfplan
+tfplan*
 *.tfplan
 crash.log
 override.tf

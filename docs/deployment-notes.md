@@ -47,15 +47,29 @@ Uploaded IFRS9 profile path: processed/ifrs9/
 Key Vault: kv-crai-dev-6fecno
 Log Analytics: law-crai-dev
 Application Insights: appi-crai-dev
+Azure SQL Server: sql-crai-dev-canadacentral-6fecno
+Azure SQL Database: sqldb-crai-dev
+Azure SQL region: Canada Central
 ```
 
 Current scope:
 
-- low-cost Azure foundation only;
+- low-cost Azure foundation;
+- serverless Azure SQL metadata/analytics layer;
 - no Azure OpenAI deployment yet;
 - no Azure AI Search deployment yet;
 - no Document Intelligence deployment yet;
 - no real data.
+
+Azure SQL loaded tables:
+
+```text
+document_registry: 23 rows
+ifrs9_credit_risk: 29,465 rows
+ifrs9_default_rate_by_grade: 7 rows
+ifrs9_default_rate_by_intent: 6 rows
+ifrs9_default_rate_by_home_ownership: 4 rows
+```
 
 Screenshot targets:
 
@@ -64,4 +78,6 @@ Screenshot targets:
 - Key Vault overview;
 - Log Analytics workspace overview;
 - Application Insights overview;
+- Azure SQL server and database overview;
+- Azure SQL Query editor table counts;
 - subscription budget page.

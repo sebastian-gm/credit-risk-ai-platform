@@ -123,3 +123,11 @@ Generate analytics profile outputs:
 ```bash
 python3 src/ingestion/profile_ifrs9_dataset.py
 ```
+
+## Azure SQL Load
+
+Load governed metadata and structured analytics tables:
+
+```bash
+python3 scripts/load_sql_tables.py
+```

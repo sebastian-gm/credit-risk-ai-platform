@@ -8,9 +8,16 @@ resource "random_string" "suffix" {
   special = false
 }
 
+resource "random_password" "sql_admin" {
+  length           = 24
+  special          = true
+  override_special = "_%@"
+}
+
 locals {
-  name_prefix = "${var.project}-${var.environment}"
-  region_code = replace(var.location, " ", "")
+  name_prefix     = "${var.project}-${var.environment}"
+  region_code     = replace(var.location, " ", "")
+  sql_region_code = replace(var.sql_location, " ", "")
   common_tags = merge(var.tags, {
     managed_by = "terraform"
   })
@@ -77,4 +84,35 @@ resource "azurerm_key_vault" "main" {
   purge_protection_enabled   = false
   rbac_authorization_enabled = true
   tags                       = local.common_tags
+}
+
+resource "azurerm_mssql_server" "main" {
+  name                          = "sql-${local.name_prefix}-${local.sql_region_code}-${random_string.suffix.result}"
+  resource_group_name           = azurerm_resource_group.main.name
+  location                      = var.sql_location
+  version                       = "12.0"
+  administrator_login           = var.sql_admin_login
+  administrator_login_password  = random_password.sql_admin.result
+  minimum_tls_version           = "1.2"
+  public_network_access_enabled = true
+  tags                          = local.common_tags
+}
+
+resource "azurerm_mssql_firewall_rule" "client" {
+  count            = var.client_ip_address == "" ? 0 : 1
+  name             = "fw-client-loader"
+  server_id        = azurerm_mssql_server.main.id
+  start_ip_address = var.client_ip_address
+  end_ip_address   = var.client_ip_address
+}
+
+resource "azurerm_mssql_database" "main" {
+  name                        = "sqldb-${local.name_prefix}"
+  server_id                   = azurerm_mssql_server.main.id
+  sku_name                    = "GP_S_Gen5_1"
+  min_capacity                = 0.5
+  auto_pause_delay_in_minutes = 60
+  max_size_gb                 = 1
+  storage_account_type        = "Local"
+  tags                        = local.common_tags
 }
