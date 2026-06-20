@@ -153,3 +153,12 @@ Ask the first grounded assistant:
 ```bash
 python3 scripts/ask_credit_risk_assistant.py "What policy applies when debt-to-income is above 45%?"
 ```
+
+## Document Extraction
+
+Generate and analyze a synthetic invoice with Azure AI Document Intelligence:
+
+```bash
+python3 src/extraction/create_synthetic_invoice_pdf.py
+python3 scripts/analyze_invoice_document.py
+```

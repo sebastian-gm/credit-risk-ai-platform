@@ -15,11 +15,12 @@ resource "random_password" "sql_admin" {
 }
 
 locals {
-  name_prefix        = "${var.project}-${var.environment}"
-  region_code        = replace(var.location, " ", "")
-  sql_region_code    = replace(var.sql_location, " ", "")
-  search_region_code = replace(var.search_location, " ", "")
-  openai_region_code = replace(var.openai_location, " ", "")
+  name_prefix          = "${var.project}-${var.environment}"
+  region_code          = replace(var.location, " ", "")
+  sql_region_code      = replace(var.sql_location, " ", "")
+  search_region_code   = replace(var.search_location, " ", "")
+  openai_region_code   = replace(var.openai_location, " ", "")
+  docintel_region_code = replace(var.document_intelligence_location, " ", "")
   common_tags = merge(var.tags, {
     managed_by = "terraform"
   })
@@ -169,4 +170,15 @@ resource "azurerm_cognitive_deployment" "embeddings" {
     name     = var.openai_embedding_deployment_sku
     capacity = var.openai_embedding_deployment_capacity
   }
+}
+
+resource "azurerm_cognitive_account" "document_intelligence" {
+  name                          = "di-${local.name_prefix}-${local.docintel_region_code}-${random_string.suffix.result}"
+  location                      = var.document_intelligence_location
+  resource_group_name           = azurerm_resource_group.main.name
+  kind                          = "FormRecognizer"
+  sku_name                      = var.document_intelligence_sku
+  public_network_access_enabled = true
+  local_auth_enabled            = true
+  tags                          = local.common_tags
 }

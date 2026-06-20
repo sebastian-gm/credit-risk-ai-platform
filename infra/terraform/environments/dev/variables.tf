@@ -51,6 +51,12 @@ variable "openai_location" {
   default     = "eastus2"
 }
 
+variable "document_intelligence_location" {
+  description = "Azure region for Document Intelligence resources."
+  type        = string
+  default     = "eastus2"
+}
+
 variable "openai_chat_model_name" {
   description = "Chat model deployed for the demo assistant."
   type        = string
@@ -109,6 +115,12 @@ variable "openai_embedding_deployment_capacity" {
   description = "Azure OpenAI embedding deployment capacity in thousands of tokens per minute."
   type        = number
   default     = 10
+}
+
+variable "document_intelligence_sku" {
+  description = "Document Intelligence pricing tier. F0 is used for low-cost portfolio testing."
+  type        = string
+  default     = "F0"
 }
 
 variable "tags" {

@@ -54,3 +54,11 @@ output "openai_chat_deployment_name" {
 output "openai_embedding_deployment_name" {
   value = azurerm_cognitive_deployment.embeddings.name
 }
+
+output "document_intelligence_account_name" {
+  value = azurerm_cognitive_account.document_intelligence.name
+}
+
+output "document_intelligence_endpoint" {
+  value = azurerm_cognitive_account.document_intelligence.endpoint
+}
