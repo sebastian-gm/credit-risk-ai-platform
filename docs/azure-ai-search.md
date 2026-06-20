@@ -12,7 +12,7 @@ Source data: synthetic business documents
 ```
 
 The first index is metadata-rich keyword search. Vector search and Azure OpenAI
-embeddings are planned for the next phase.
+embeddings are planned for the next retrieval-quality phase.
 
 The core resource group is in East US 2, but Search is configured separately
 because capacity can vary by region.

@@ -146,3 +146,9 @@ Run a citation-ready retrieval query:
 ```bash
 python3 scripts/query_ai_search.py "debt-to-income above 45 exception review policy"
 ```
+
+Ask the first grounded assistant:
+
+```bash
+python3 scripts/ask_credit_risk_assistant.py "What policy applies when debt-to-income is above 45%?"
+```

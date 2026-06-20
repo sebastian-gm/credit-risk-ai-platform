@@ -38,3 +38,15 @@ output "search_service_name" {
 output "search_service_endpoint" {
   value = "https://${azurerm_search_service.main.name}.search.windows.net"
 }
+
+output "openai_account_name" {
+  value = azurerm_cognitive_account.openai.name
+}
+
+output "openai_endpoint" {
+  value = azurerm_cognitive_account.openai.endpoint
+}
+
+output "openai_chat_deployment_name" {
+  value = azurerm_cognitive_deployment.chat.name
+}

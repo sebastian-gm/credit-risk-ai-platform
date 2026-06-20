@@ -45,6 +45,42 @@ variable "search_location" {
   default     = "canadacentral"
 }
 
+variable "openai_location" {
+  description = "Azure region for Azure OpenAI resources. Kept separate because model quota and availability vary by region."
+  type        = string
+  default     = "eastus2"
+}
+
+variable "openai_chat_model_name" {
+  description = "Chat model deployed for the demo assistant."
+  type        = string
+  default     = "gpt-5-mini"
+}
+
+variable "openai_chat_model_version" {
+  description = "Chat model version deployed for the demo assistant."
+  type        = string
+  default     = "2025-08-07"
+}
+
+variable "openai_chat_deployment_name" {
+  description = "Azure OpenAI deployment name used by the assistant scripts."
+  type        = string
+  default     = "gpt-5-mini"
+}
+
+variable "openai_chat_deployment_sku" {
+  description = "Azure OpenAI deployment SKU."
+  type        = string
+  default     = "GlobalStandard"
+}
+
+variable "openai_chat_deployment_capacity" {
+  description = "Azure OpenAI deployment capacity in thousands of tokens per minute."
+  type        = number
+  default     = 10
+}
+
 variable "tags" {
   description = "Common Azure tags."
   type        = map(string)

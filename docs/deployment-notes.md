@@ -51,6 +51,8 @@ Azure SQL Server: sql-crai-dev-canadacentral-6fecno
 Azure SQL Database: sqldb-crai-dev
 Azure SQL region: Canada Central
 Azure AI Search: srch-crai-dev-canadacentral-6fecno
+Azure OpenAI: aoai-crai-dev-eastus2-6fecno
+Azure OpenAI deployment: gpt-5-mini
 ```
 
 Current scope:
@@ -58,7 +60,7 @@ Current scope:
 - low-cost Azure foundation;
 - serverless Azure SQL metadata/analytics layer;
 - Azure AI Search retrieval layer;
-- no Azure OpenAI deployment yet;
+- Azure OpenAI grounded assistant layer;
 - no Document Intelligence deployment yet;
 - no real data.
 

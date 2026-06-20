@@ -19,6 +19,7 @@ locals {
   region_code        = replace(var.location, " ", "")
   sql_region_code    = replace(var.sql_location, " ", "")
   search_region_code = replace(var.search_location, " ", "")
+  openai_region_code = replace(var.openai_location, " ", "")
   common_tags = merge(var.tags, {
     managed_by = "terraform"
   })
@@ -124,4 +125,32 @@ resource "azurerm_search_service" "main" {
   location            = var.search_location
   sku                 = "free"
   tags                = local.common_tags
+}
+
+resource "azurerm_cognitive_account" "openai" {
+  name                          = "aoai-${local.name_prefix}-${local.openai_region_code}-${random_string.suffix.result}"
+  location                      = var.openai_location
+  resource_group_name           = azurerm_resource_group.main.name
+  kind                          = "OpenAI"
+  sku_name                      = "S0"
+  custom_subdomain_name         = "aoai-${local.name_prefix}-${local.openai_region_code}-${random_string.suffix.result}"
+  public_network_access_enabled = true
+  local_auth_enabled            = true
+  tags                          = local.common_tags
+}
+
+resource "azurerm_cognitive_deployment" "chat" {
+  name                 = var.openai_chat_deployment_name
+  cognitive_account_id = azurerm_cognitive_account.openai.id
+
+  model {
+    format  = "OpenAI"
+    name    = var.openai_chat_model_name
+    version = var.openai_chat_model_version
+  }
+
+  sku {
+    name     = var.openai_chat_deployment_sku
+    capacity = var.openai_chat_deployment_capacity
+  }
 }
