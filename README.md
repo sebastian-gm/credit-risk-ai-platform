@@ -187,5 +187,5 @@ The current demo evidence package is documented here:
 
 It includes SQL row counts, hybrid retrieval output, a cited assistant answer,
 Document Intelligence invoice extraction, RAG evaluation results, and governance
-review evidence. The Foundry setup adds a dedicated project endpoint and model
-deployment for model and agent testing.
+review evidence. The Foundry setup adds a dedicated project endpoint, model
+deployment, and hosted Credit Policy Assistant agent grounded in Azure AI Search.

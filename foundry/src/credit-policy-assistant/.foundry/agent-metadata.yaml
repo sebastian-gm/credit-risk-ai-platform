@@ -1,0 +1,12 @@
+defaultEnvironment: dev
+environments:
+  dev:
+    projectEndpoint: https://ai-account-dosuleocw4nxo.services.ai.azure.com/api/projects/crai-foundry-project
+    agentName: credit-policy-assistant
+    azureContainerRegistry: crzopquhgqtxx6y.azurecr.io
+    evaluationSuites:
+      - name: smoke-credit-policy
+        dataset: .foundry/datasets/smoke-credit-policy.jsonl
+        evaluators:
+          - grounded_answer
+          - citation_presence

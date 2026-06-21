@@ -1,0 +1,2 @@
+{"id":"dti-exception-review","input":"What policy applies when debt-to-income is above 45%?","expected_source":"policies/credit_policy_2026.md","expected_terms":["exception review","debt-to-income"]}
+{"id":"automated-loan-approval","input":"Can the assistant approve a loan automatically?","expected_source":"policies/credit_policy_2026.md","expected_terms":["must not approve","human"]}

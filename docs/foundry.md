@@ -13,6 +13,8 @@ This project includes a separate Azure AI Foundry project for model and agent te
 | Region | `eastus2` |
 | Project endpoint | `https://ai-account-dosuleocw4nxo.services.ai.azure.com/api/projects/crai-foundry-project` |
 | Model deployment | `gpt-5-mini` |
+| Hosted agent | `credit-policy-assistant` |
+| Container registry | `crzopquhgqtxx6y.azurecr.io` |
 
 ## What This Adds
 
@@ -24,6 +26,9 @@ Current scope:
 - Application Insights and Log Analytics connected for monitoring.
 - `gpt-5-mini` deployed to the Foundry account.
 - Project endpoint tested through the Responses API.
+- Hosted `credit-policy-assistant` agent deployed to Azure AI Foundry.
+- Agent grounds answers with the existing Azure AI Search index `credit-risk-documents`.
+- Azure AI Search allows Entra authentication and the hosted agent identity has `Search Index Data Reader`.
 
 Run the endpoint smoke test:
 
@@ -41,6 +46,36 @@ https://ai-account-dosuleocw4nxo.services.ai.azure.com/api/projects/crai-foundry
 
 The direct account endpoint is not the preferred route for this Foundry project setup.
 
-## Next Foundry Step
+## Hosted Agent
 
-The next useful step is a small Credit Policy Assistant in Foundry that uses the existing Azure AI Search index as its grounding source. That will connect the current RAG work to a visible Foundry agent experience.
+The hosted agent endpoint is:
+
+```text
+https://ai-account-dosuleocw4nxo.services.ai.azure.com/api/projects/crai-foundry-project/agents/credit-policy-assistant/endpoint/protocols/openai/responses?api-version=v1
+```
+
+The agent:
+
+- receives questions through the Foundry Responses protocol;
+- queries Azure AI Search using Entra authentication, not a committed Search key;
+- sends retrieved policy snippets to `gpt-5-mini`;
+- returns concise answers with source-path citations;
+- refuses to approve, deny, price, or recommend final loan decisions.
+
+Remote test question:
+
+```text
+What policy applies when debt-to-income is above 45%?
+```
+
+Remote test result:
+
+```text
+Applications with a debt-to-income ratio above 45% require an exception review.
+Sources include policies/credit_policy_2026.md and underwriting memo citations.
+```
+
+Evidence:
+
+- [Hosted agent invoke output](evidence/foundry/hosted-agent-invoke-output.txt)
+- [Hosted agent playground screenshot](evidence/foundry/hosted-agent-playground.png)

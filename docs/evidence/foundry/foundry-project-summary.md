@@ -11,6 +11,7 @@ rg-crai-foundry-dev-eastus2
 Screenshot:
 
 - [foundry-resource-group-overview.png](foundry-resource-group-overview.png)
+- [hosted-agent-playground.png](hosted-agent-playground.png)
 
 ## Resources Created
 
@@ -21,6 +22,7 @@ ai-account-dosuleocw4nxo                       AIServices  eastus2
 logs-dosuleocw4nxo                                         eastus2
 ai-account-dosuleocw4nxo/crai-foundry-project  AIServices  eastus2
 appi-dosuleocw4nxo                             web         eastus2
+crzopquhgqtxx6y                                            eastus2
 ```
 
 ## Project Endpoint
@@ -58,3 +60,18 @@ status: completed
 model: gpt-5-mini
 project route: /api/projects/crai-foundry-project/openai/v1/responses
 ```
+
+## Hosted Agent Test
+
+Agent:
+
+```text
+credit-policy-assistant
+```
+
+Remote invocation evidence:
+
+- [hosted-agent-invoke-output.txt](hosted-agent-invoke-output.txt)
+
+The hosted agent uses the Foundry Responses protocol, queries the Azure AI
+Search index `credit-risk-documents`, and returns source-path citations.

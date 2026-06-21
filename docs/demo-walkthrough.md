@@ -172,7 +172,13 @@ https://ai-account-dosuleocw4nxo.services.ai.azure.com/api/projects/crai-foundry
 ```
 
 The `gpt-5-mini` deployment is running on the Foundry account and supports both
-Responses and Agents v2. A project endpoint test completed successfully.
+Responses and Agents v2. A hosted `credit-policy-assistant` agent is deployed,
+uses Azure AI Search for grounding, and returns source-path citations.
+
+Remote agent evidence:
+
+- [hosted-agent-invoke-output.txt](evidence/foundry/hosted-agent-invoke-output.txt)
+- [hosted-agent-playground.png](evidence/foundry/hosted-agent-playground.png)
 
 ## Demo Script
 
@@ -185,7 +191,7 @@ Use this sequence when showing the project:
 5. Show `invoice-extraction-summary.json` for Document Intelligence extraction.
 6. Show `rag-evaluation-results.md` to prove the assistant behavior is measured.
 7. Show the blocked `UC-006` use case in the governance registry.
-8. Show `foundry-project-summary.md` to prove the Foundry project and model endpoint are working.
+8. Show `hosted-agent-invoke-output.txt` to prove the Foundry hosted agent is working with Search grounding.
 
 ## Evidence Snapshot
 
