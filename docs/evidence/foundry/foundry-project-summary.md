@@ -12,6 +12,7 @@ Screenshot:
 
 - [foundry-resource-group-overview.png](foundry-resource-group-overview.png)
 - [hosted-agent-playground.png](hosted-agent-playground.png)
+- [hosted-agent-evaluation-report.png](hosted-agent-evaluation-report.png)
 
 ## Resources Created
 
@@ -75,3 +76,21 @@ Remote invocation evidence:
 
 The hosted agent uses the Foundry Responses protocol, queries the Azure AI
 Search index `credit-risk-documents`, and returns source-path citations.
+
+## Hosted Agent Evaluation
+
+Evaluation evidence:
+
+- [hosted-agent-evaluation-results.md](hosted-agent-evaluation-results.md)
+
+Result:
+
+```text
+status: completed
+agent: credit-policy-assistant v1
+cases: 2
+passed: 2
+failed: 0
+errored: 0
+criteria: relevance, task_adherence, intent_resolution, indirect_attack
+```

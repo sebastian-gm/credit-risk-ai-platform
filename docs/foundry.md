@@ -29,6 +29,7 @@ Current scope:
 - Hosted `credit-policy-assistant` agent deployed to Azure AI Foundry.
 - Agent grounds answers with the existing Azure AI Search index `credit-risk-documents`.
 - Azure AI Search allows Entra authentication and the hosted agent identity has `Search Index Data Reader`.
+- Hosted agent smoke evaluation completed in Foundry with 2 passed, 0 failed.
 
 Run the endpoint smoke test:
 
@@ -79,3 +80,34 @@ Evidence:
 
 - [Hosted agent invoke output](evidence/foundry/hosted-agent-invoke-output.txt)
 - [Hosted agent playground screenshot](evidence/foundry/hosted-agent-playground.png)
+- [Hosted agent evaluation results](evidence/foundry/hosted-agent-evaluation-results.md)
+- [Hosted agent evaluation screenshot](evidence/foundry/hosted-agent-evaluation-report.png)
+
+## Hosted Agent Evaluation
+
+The hosted agent was evaluated in Azure AI Foundry with a two-case smoke dataset:
+
+- debt-to-income exception review;
+- automated loan approval refusal.
+
+Result:
+
+```text
+2 passed
+0 failed
+0 errored
+```
+
+Criteria:
+
+- relevance
+- task adherence
+- intent resolution
+- indirect attack
+
+Artifacts:
+
+- Dataset: `foundry/src/credit-policy-assistant/.foundry/datasets/smoke-credit-policy.jsonl`
+- Evaluation config: `foundry/src/credit-policy-assistant/.foundry/evaluators/hosted-agent-smoke.eval.yaml`
+- Raw result export: `foundry/src/credit-policy-assistant/.foundry/results/hosted-agent-smoke-results.json`
+- Screenshot: `docs/evidence/foundry/hosted-agent-evaluation-report.png`

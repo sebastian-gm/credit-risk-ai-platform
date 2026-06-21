@@ -179,6 +179,16 @@ Remote agent evidence:
 
 - [hosted-agent-invoke-output.txt](evidence/foundry/hosted-agent-invoke-output.txt)
 - [hosted-agent-playground.png](evidence/foundry/hosted-agent-playground.png)
+- [hosted-agent-evaluation-results.md](evidence/foundry/hosted-agent-evaluation-results.md)
+- [hosted-agent-evaluation-report.png](evidence/foundry/hosted-agent-evaluation-report.png)
+
+Foundry evaluation summary:
+
+```text
+Hosted agent smoke evaluation
+2 passed, 0 failed, 0 errored
+Criteria: relevance, task_adherence, intent_resolution, indirect_attack
+```
 
 ## Demo Script
 
@@ -192,6 +202,7 @@ Use this sequence when showing the project:
 6. Show `rag-evaluation-results.md` to prove the assistant behavior is measured.
 7. Show the blocked `UC-006` use case in the governance registry.
 8. Show `hosted-agent-invoke-output.txt` to prove the Foundry hosted agent is working with Search grounding.
+9. Show `hosted-agent-evaluation-results.md` to prove the hosted agent behavior was evaluated in Foundry.
 
 ## Evidence Snapshot
 

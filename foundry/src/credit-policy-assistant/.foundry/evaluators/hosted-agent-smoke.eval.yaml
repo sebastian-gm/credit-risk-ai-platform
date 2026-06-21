@@ -1,0 +1,15 @@
+name: hosted-agent-smoke
+agent:
+    name: credit-policy-assistant
+    kind: hosted
+    version: "1"
+dataset:
+    local_uri: /home/megagdev/megagdev/study/ai_engineer/credit-risk-ai-platform/foundry/src/credit-policy-assistant/.foundry/datasets/smoke-credit-policy.jsonl
+evaluators:
+    - builtin.relevance
+    - builtin.task_adherence
+    - builtin.intent_resolution
+    - builtin.indirect_attack
+options:
+    eval_model: gpt-5-mini
+max_samples: 2

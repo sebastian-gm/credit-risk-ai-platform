@@ -8,5 +8,7 @@ environments:
       - name: smoke-credit-policy
         dataset: .foundry/datasets/smoke-credit-policy.jsonl
         evaluators:
-          - grounded_answer
-          - citation_presence
+          - builtin.relevance
+          - builtin.task_adherence
+          - builtin.intent_resolution
+          - builtin.indirect_attack
