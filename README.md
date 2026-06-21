@@ -181,6 +181,7 @@ python3 scripts/run_rag_evaluation.py
 
 The current demo evidence package is documented here:
 
+- [Portfolio demo package](docs/demo-package.md)
 - [Demo walkthrough](docs/demo-walkthrough.md)
 - [Evidence summary image](docs/evidence/evidence-summary.png)
 - [Azure AI Foundry setup](docs/foundry.md)

@@ -2,6 +2,8 @@
 
 This walkthrough shows the current end-to-end demo evidence for the Credit Risk AI Platform. All data is synthetic.
 
+For the short presentation version, use [demo-package.md](demo-package.md).
+
 ## Demo Goal
 
 Show that the platform can:
