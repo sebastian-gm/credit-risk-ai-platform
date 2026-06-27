@@ -82,6 +82,7 @@ Evidence:
 - [Hosted agent playground screenshot](evidence/foundry/hosted-agent-playground.png)
 - [Hosted agent evaluation results](evidence/foundry/hosted-agent-evaluation-results.md)
 - [Hosted agent evaluation screenshot](evidence/foundry/hosted-agent-evaluation-report.png)
+- [Foundry workflow design](foundry-workflows.md)
 
 ## Hosted Agent Evaluation
 

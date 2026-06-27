@@ -185,6 +185,7 @@ The current demo evidence package is documented here:
 - [Demo walkthrough](docs/demo-walkthrough.md)
 - [Evidence summary image](docs/evidence/evidence-summary.png)
 - [Azure AI Foundry setup](docs/foundry.md)
+- [Azure AI Foundry workflow design](docs/foundry-workflows.md)
 
 It includes SQL row counts, hybrid retrieval output, a cited assistant answer,
 Document Intelligence invoice extraction, RAG evaluation results, and governance

@@ -23,6 +23,7 @@ The important part is the workflow: data foundation, trusted retrieval, document
 | 7 | [hosted-agent-playground.png](evidence/foundry/hosted-agent-playground.png) | The assistant is deployed as a Foundry hosted agent |
 | 8 | [hosted-agent-evaluation-report.png](evidence/foundry/hosted-agent-evaluation-report.png) | Foundry evaluated the hosted agent and passed 2 of 2 smoke cases |
 | 9 | [foundry-project-summary.md](evidence/foundry/foundry-project-summary.md) | Foundry resources, model deployment, and hosted agent evidence |
+| 10 | [foundry-workflows.md](foundry-workflows.md) | Visual workflow design for routing credit-risk requests across agents |
 
 ## Screenshots To Use
 
@@ -145,6 +146,7 @@ The business value is practical:
 ## Next Build Phase
 
 1. Build the Power BI report for adoption, quality, governance risk, and credit-risk metrics.
-2. Add more document templates for loan files, invoices, and compliance reviews.
-3. Add a larger Foundry evaluation set with more policy, safety, and citation cases.
-4. Record a short demo video or create a small slide deck from this package.
+2. Build the Foundry visual workflow from the workflow design files and capture screenshots.
+3. Add more document templates for loan files, invoices, and compliance reviews.
+4. Add a larger Foundry evaluation set with more policy, safety, and citation cases.
+5. Record a short demo video or create a small slide deck from this package.
